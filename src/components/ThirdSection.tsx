@@ -15,10 +15,7 @@ export default function ThirdSection() {
           SERVIÇO DE BARBEIRO PRESTADO COM EXCELÊNCIA
         </h2>
         <p className="mt-10 text-center md:w-11/12 md:text-start lg:w-3/4 lg:text-start">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
-          excepturi ipsum vitae corporis porro itaque. Modi sed esse asperiores
-          est vitae molestiae tempore tempora nostrum at suscipit enim, quam
-          dignissimos.
+        Atenção aos detalhes, técnicas modernas e um serviço que supera as expectativas. Venha conhecer o que é excelência em cuidados masculinos.
         </p>
         <div className="mb-10 mt-10 flex justify-center gap-20 px-5 lg:w-3/6 lg:justify-start lg:gap-10 lg:p-0">
           <div>

@@ -13,18 +13,18 @@ export const whyus: WhyUsProps[] = [
     img: Experiencia,
     title: "EXPERIÊNCIA",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus erat quis neque tincidunt lacinia.",
+      "Mais de uma década cuidando da aparência de nossos clientes com dedicação e técnica."
   },
   {
     img: Certificado,
     title: "CERTIFICADO",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus erat quis neque tincidunt lacinia.",
+      "Profissionais qualificados que entregam resultados incríveis."
   },
   {
     img: Escudo,
     title: "SEGURANÇA",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus erat quis neque tincidunt lacinia.",
+      "Utilizamos produtos e equipamentos de alta qualidade para garantir sua saúde e bem-estar."
   },
 ];

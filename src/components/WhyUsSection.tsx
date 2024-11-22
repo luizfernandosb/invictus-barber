@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 export default function WhyUsSection() {
   return (
     <motion.section
-    viewport={{once: true}}
+      viewport={{ once: true }}
       initial={{ scale: 0.5 }}
       whileInView={{ scale: 1 }}
       transition={{ duration: 1 }}
@@ -13,10 +13,8 @@ export default function WhyUsSection() {
       <div className="flex w-full flex-col gap-4">
         <h2 className="mt-5 text-2xl font-bold">POR QUE NOS ESCOLHER?</h2>
         <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque fugit
-          esse eius. Rerum excepturi at nesciunt numquam accusamus molestiae
-          beatae, eum placeat in, explicabo maiores iure, qui totam repudiandae
-          inventore.
+          Porque cada detalhe importa, e nós garantimos uma experiência
+          inesquecível.
         </p>
       </div>
       <div className="flex-col justify-center md:grid md:grid-cols-2 lg:flex lg:flex-row lg:gap-5">
