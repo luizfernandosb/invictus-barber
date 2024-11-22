@@ -6,19 +6,19 @@ interface WhyUsProps {
 
 export const whyus: WhyUsProps[] = [
   {
-    img: "./src/assets/image.png",
+    img: "./assets/image.png",
     title: "EXPERIÊNCIA",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus erat quis neque tincidunt lacinia.",
   },
   {
-    img: "./src/assets/certificado.png",
+    img: "./assets/certificado.png",
     title: "CERTIFICADO",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus erat quis neque tincidunt lacinia.",
   },
   {
-    img: "./src/assets/escudo.png",
+    img: "./assets/escudo.png",
     title: "SEGURANÇA",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus erat quis neque tincidunt lacinia.",
