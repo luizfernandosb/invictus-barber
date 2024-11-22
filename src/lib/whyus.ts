@@ -12,13 +12,13 @@ export const whyus: WhyUsProps[] = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus erat quis neque tincidunt lacinia.",
   },
   {
-    img: "./src/assets/image.png",
+    img: "./src/assets/certificado.png",
     title: "CERTIFICADO",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus erat quis neque tincidunt lacinia.",
   },
   {
-    img: "./src/assets/image.png",
+    img: "./src/assets/escudo.png",
     title: "SEGURANÇA",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus erat quis neque tincidunt lacinia.",
