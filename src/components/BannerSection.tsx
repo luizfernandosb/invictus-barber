@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 
 export default function BannerSection() {
   const handleClick = () => {
-    window.open("https://www.google.com", "_blank");
+    window.open("https://linktr.ee/invictus.barber", "_blank");
   };
   return (
     <motion.section
