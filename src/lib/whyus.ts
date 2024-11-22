@@ -1,3 +1,7 @@
+import Certificado from "../assets/certificado.png";
+import Escudo from "../assets/escudo.png";
+import Experiencia from "../assets/image.png";
+
 interface WhyUsProps {
   img: string;
   title: string;
@@ -6,19 +10,19 @@ interface WhyUsProps {
 
 export const whyus: WhyUsProps[] = [
   {
-    img: "./assets/image.png",
+    img: Experiencia,
     title: "EXPERIÊNCIA",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus erat quis neque tincidunt lacinia.",
   },
   {
-    img: "./assets/certificado.png",
+    img: Certificado,
     title: "CERTIFICADO",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus erat quis neque tincidunt lacinia.",
   },
   {
-    img: "./assets/escudo.png",
+    img: Escudo,
     title: "SEGURANÇA",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus erat quis neque tincidunt lacinia.",
