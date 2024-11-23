@@ -11,7 +11,7 @@ import FixedButton from "./components/FixedButton";
 export default function App() {
   return (
     <main className="">
-      <FixedButton/>
+      <FixedButton />
       <HomeSection />
       <InfoSection />
       <ThirdSection />

@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 export default function ThirdSection() {
   return (
     <motion.section
-    viewport={{once: true}}
+      viewport={{ once: true }}
       initial={{ scale: 0.5 }}
       whileInView={{ scale: 1 }}
       transition={{ duration: 1 }}
@@ -15,7 +15,9 @@ export default function ThirdSection() {
           SERVIÇO DE BARBEIRO PRESTADO COM EXCELÊNCIA
         </h2>
         <p className="mt-10 text-center md:w-11/12 md:text-start lg:w-3/4 lg:text-start">
-        Atenção aos detalhes, técnicas modernas e um serviço que supera as expectativas. Venha conhecer o que é excelência em cuidados masculinos.
+          Atenção aos detalhes, técnicas modernas e um serviço que supera as
+          expectativas. Venha conhecer o que é excelência em cuidados
+          masculinos.
         </p>
         <div className="mb-10 mt-10 flex justify-center gap-20 px-5 lg:w-3/6 lg:justify-start lg:gap-60 lg:p-0">
           <div>

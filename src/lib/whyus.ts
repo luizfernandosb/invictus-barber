@@ -13,18 +13,18 @@ export const whyus: WhyUsProps[] = [
     img: Experiencia,
     title: "EXPERIÊNCIA",
     description:
-      "Mais de uma década cuidando da aparência de nossos clientes com dedicação e técnica."
+      "Mais de uma década cuidando da aparência de nossos clientes com dedicação e técnica.",
   },
   {
     img: Certificado,
     title: "CERTIFICADO",
     description:
-      "Profissionais qualificados que entregam resultados incríveis."
+      "Profissionais qualificados que entregam resultados incríveis.",
   },
   {
     img: Escudo,
     title: "SEGURANÇA",
     description:
-      "Utilizamos produtos e equipamentos de alta qualidade para garantir sua saúde e bem-estar."
+      "Utilizamos produtos e equipamentos de alta qualidade para garantir sua saúde e bem-estar.",
   },
 ];

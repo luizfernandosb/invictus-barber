@@ -3,9 +3,10 @@ import { motion } from "motion/react";
 export default function MapSection() {
   return (
     <motion.section
-    viewport={{once: true}}
-    initial={{ scale: 0.5 }}
-      whileInView={{scale: 1}}      transition={{ duration: 1 }}
+      viewport={{ once: true }}
+      initial={{ scale: 0.5 }}
+      whileInView={{ scale: 1 }}
+      transition={{ duration: 1 }}
       className="mt-10"
     >
       <iframe
