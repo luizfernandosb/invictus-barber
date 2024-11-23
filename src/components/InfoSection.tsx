@@ -64,8 +64,7 @@ export default function InfoSection() {
             <h2 className="mt-2 font-bold">HORÁRIO</h2>
             <span className="mb-2 mt-2 h-1 w-12 bg-slate-300 font-bold"></span>
             <p>Seg - Qui: 09h às 19h</p>
-            <p>Sex: 08h às 19h</p>
-            <p>Sáb: 7h30 às 19h</p>
+            <p>Sex - Sáb: 08h às 19h</p>
           </motion.div>
         </div>
       </div>
