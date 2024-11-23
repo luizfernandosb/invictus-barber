@@ -23,7 +23,7 @@ export default function InfoSection() {
             <img src={adress} alt="" className="w-10" />
             <h2 className="mt-2 font-bold">ENDEREÇO</h2>
             <span className="mb-2 mt-2 h-1 w-12 bg-slate-300"></span>
-            <p>Av. Pedro Timponi,38 - Loja 2</p>
+            <p>Av. Pedro Timponi, 38 - Loja 2</p>
             <p>Nova Benfica</p>
           </motion.div>
           <motion.div
