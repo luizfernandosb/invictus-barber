@@ -5,10 +5,13 @@ import ServicesSection from "./components/ServicesSection";
 import BannerSection from "./components/BannerSection";
 import WhyUsSection from "./components/WhyUsSection";
 import MapSection from "./components/MapSection";
+import Footer from "./components/Footer";
+import FixedButton from "./components/FixedButton";
 
 export default function App() {
   return (
-    <main>
+    <main className="">
+      <FixedButton/>
       <HomeSection />
       <InfoSection />
       <ThirdSection />
@@ -16,6 +19,7 @@ export default function App() {
       <BannerSection />
       <WhyUsSection />
       <MapSection />
+      <Footer />
     </main>
   );
 }

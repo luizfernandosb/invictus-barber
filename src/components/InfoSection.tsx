@@ -13,7 +13,7 @@ export default function InfoSection() {
       className="relative mt-[-7rem] items-center justify-center lg:w-full"
     >
       <div className="flex justify-center">
-        <div className="flex h-full w-full flex-col items-center justify-center gap-4 bg-slate-700 pb-5 pt-5 text-white lg:w-3/5 lg:flex-row lg:gap-20">
+        <div className="flex h-full w-full flex-col items-center justify-center gap-4 bg-slate-700 py-10 pb-5 pt-5 text-white lg:w-3/5 lg:flex-row lg:gap-20">
           <motion.div
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
@@ -35,8 +35,24 @@ export default function InfoSection() {
             <img src={telefone} alt="" className="w-10" />
             <h2 className="mt-2 font-bold">CONTATO</h2>
             <span className="mb-2 mt-2 h-1 w-12 bg-slate-300"></span>
-            <p>(32) 9999-9999</p>
-            <p>(32) 9999-9999</p>
+            <a
+              className="hover:cursor-pointer hover:underline"
+              href="https://api.whatsapp.com/send?phone=5532988453600"
+              target="_blank"
+              rel="noopener"
+            >
+              {" "}
+              <p>Ector - (32) 98845-3600</p>
+            </a>
+            <a
+              className="hover:cursor-pointer hover:underline"
+              href="https://api.whatsapp.com/send?phone=553298080497"
+              target="_blank"
+              rel="noopener"
+            >
+              {" "}
+              <p>Thiago - (32) 99808-0497</p>
+            </a>
           </motion.div>
           <motion.div
             initial={{ scale: 0 }}
@@ -47,8 +63,9 @@ export default function InfoSection() {
             <img src={watch} alt="" className="w-10" />
             <h2 className="mt-2 font-bold">HORÁRIO</h2>
             <span className="mb-2 mt-2 h-1 w-12 bg-slate-300 font-bold"></span>
-            <p>Seg - Sex: 08h às 20h</p>
-            <p>Sab: 08h às 16h</p>
+            <p>Seg - Qui: 09h às 19h</p>
+            <p>Sex: 08h às 19h</p>
+            <p>Sáb: 7h30 às 19h</p>
           </motion.div>
         </div>
       </div>

@@ -17,9 +17,10 @@ export default function WhyUsSection() {
           inesquecível.
         </p>
       </div>
-      <div className="flex-col justify-center md:grid md:grid-cols-2 lg:flex lg:flex-row lg:gap-5">
+      <ul className="flex-col justify-center md:grid md:grid-cols-2 lg:flex lg:flex-row lg:gap-5">
         {whyus.map((item, index) => (
-          <motion.div
+          <motion.li
+            key={index}
             initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{
@@ -33,9 +34,9 @@ export default function WhyUsSection() {
             <h3 className="font-bold">{item.title}</h3>
             <span className="h-1 w-12 bg-black font-bold"></span>
             <p className="mb-5">{item.description}</p>
-          </motion.div>
+          </motion.li>
         ))}
-      </div>
+      </ul>
     </motion.section>
   );
 }

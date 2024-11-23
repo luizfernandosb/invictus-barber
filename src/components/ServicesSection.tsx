@@ -17,14 +17,18 @@ export default function ServicesSection() {
         com foco no seu estilo e personalidade.
       </p>
       <div className="flex justify-center">
-        <div className="grid w-full max-w-[40rem] grid-cols-2 justify-center gap-4 p-10">
-          {services.map((service) => (
-            <div className="flex flex-col text-start">
-              <p className="font-bold">{service.service}</p>
-              <p className="lg:flex">{service.description}</p>
-            </div>
+        <ul className="grid w-full max-w-[40rem] grid-cols-1 justify-center gap-6 p-10 lg:grid-cols-2">
+          {services.map((service, index) => (
+            <li key={index} className="flex flex-col text-start">
+              <p className="font-extrabold uppercase">{service.service}</p>
+              <span className="mb-2 h-1 w-12 bg-black"></span>
+              <p className="mb-2 lg:flex">{service.description}</p>
+              <p className="mt-auto w-24 rounded-lg bg-cyan-950 p-1 font-extrabold text-white lg:flex">
+                {service.price}
+              </p>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </motion.section>
   );
