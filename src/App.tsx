@@ -7,6 +7,7 @@ import WhyUsSection from "./components/WhyUsSection";
 import MapSection from "./components/MapSection";
 import Footer from "./components/Footer";
 import FixedButton from "./components/FixedButton";
+import FeedbackSection from "./components/FeedbackSection";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
       <ServicesSection />
       <BannerSection />
       <WhyUsSection />
+      <FeedbackSection />
       <MapSection />
       <Footer />
     </main>
