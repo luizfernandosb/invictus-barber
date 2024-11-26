@@ -4,7 +4,7 @@ import { FeedbackSuccess } from "./FeedbackSuccess";
 
 export default function FeedbackSection() {
   const [showedForm, setShowedForm] = useState<"feedback" | "success">(
-    "success",
+    "feedback",
   );
 
   return (
