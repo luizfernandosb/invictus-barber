@@ -69,9 +69,9 @@ export const services: ServicesProps[] = [
     price: "R$ 80,00",
   },
   {
-    service: "Pezinho",
+    service: "Luzes",
     description:
-      "Acabamento detalhado nas laterais, nuca e testa para um visual bem definido.",
-    price: "R$ 10,00",
+      "Detalhamento nas laterais, nuca e testa para um visual definido e iluminado",
+    price: "R$ 40,00",
   },
 ];

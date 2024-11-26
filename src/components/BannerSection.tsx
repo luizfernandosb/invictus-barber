@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import FilledButton from "./Button/FilledButton";
 
 export default function BannerSection() {
   const handleClick = () => {
@@ -18,12 +19,11 @@ export default function BannerSection() {
             VENHA PARA A NOSSA BARBEARIA E DESCUBRA O PODER DE UM CORTE
             PERFEITO.
           </h2>
-          <button
-            className="rounded bg-cyan-700 px-4 py-2 font-bold text-white transition hover:bg-cyan-950"
+          <FilledButton
             onClick={() => handleClick()}
           >
             AGENDE UM HORÁRIO
-          </button>
+          </FilledButton>
         </div>
       </div>
     </motion.section>

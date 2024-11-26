@@ -1,5 +1,7 @@
 import Image from "../assets/barber1.jpg";
 import { motion } from "motion/react";
+import OutlinedButton from "./Button/OutlinedButton";
+import FilledButton from "./Button/FilledButton";
 
 export default function HomeSection() {
   const handleClick = () => {
@@ -33,18 +35,12 @@ export default function HomeSection() {
           TRANSFORME SEU VISUAL, ELEVE SUA CONFIANÇA!
         </motion.h1>
         <div className="flex flex-col gap-4">
-          <button
-            className="transitio rounded bg-cyan-700 px-4 py-2 font-bold text-white hover:bg-cyan-950"
-            onClick={() => handleClick()}
-          >
+          <FilledButton onClick={() => handleClick()} >
             AGENDE UM HORÁRIO
-          </button>
-          <button
-            className="rounded border px-4 py-2 font-bold text-white transition hover:bg-cyan-950"
-            onClick={() => handleServices()}
-          >
+          </FilledButton>
+          <OutlinedButton onClick={() => handleServices()}>
             NOSSOS SERVIÇOS
-          </button>
+          </OutlinedButton>
         </div>
       </div>
     </motion.section>
