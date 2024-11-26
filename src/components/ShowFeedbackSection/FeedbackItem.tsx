@@ -9,7 +9,7 @@ type FeedbackItemProps = {
 export const FeedbackItem = (props: FeedbackItemProps) => {
   return (
     <li
-      className={`flex h-64 min-w-full flex-col justify-center bg-cyan-950 px-20 text-white`}
+      className={`flex h-64 min-w-full flex-col justify-center rounded-lg bg-cyan-950 px-20 text-white`}
     >
       <p className="flex flex-col font-bold">
         {props.name}

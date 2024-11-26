@@ -1,4 +1,3 @@
-import FilledButton from "../Button/FilledButton";
 
 type SucessFeedbackFormProps = {
   onSendNewFeedback: () => void;
@@ -10,12 +9,6 @@ export const FeedbackSuccess = (props: SucessFeedbackFormProps) => {
       <p className="mb-4 text-lg font-semibold text-gray-800">
         Feedback enviado com sucesso! 🎉
       </p>
-      <FilledButton
-        onClick={() => props.onSendNewFeedback()}
-        
-      >
-        Enviar um novo feedback
-      </FilledButton>
     </form>
   );
 };

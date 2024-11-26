@@ -8,7 +8,7 @@ import MapSection from "./components/MapSection";
 import Footer from "./components/Footer";
 import FixedButton from "./components/FixedButton";
 import FeedbackSection from "./components/FeedbackSection";
-import { FeedbackList } from "./components/ShowFeedbackSection/FeedbackList";
+import { ShowFeedbackSection } from "./components/ShowFeedbackSection";
 
 export default function App() {
   return (
@@ -20,7 +20,7 @@ export default function App() {
       <ServicesSection />
       <BannerSection />
       <WhyUsSection />
-      <FeedbackList />
+      <ShowFeedbackSection />
       <FeedbackSection />
       <MapSection />
       <Footer />

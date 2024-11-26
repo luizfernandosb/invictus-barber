@@ -1,6 +1,7 @@
+import { FeedbackList } from "./FeedbackList"
 
-export const index = () => {
+export const ShowFeedbackSection = () => {
   return (
-    <div>index</div>
+    <FeedbackList />
   )
 }
