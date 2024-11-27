@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import FixedButton from "./components/FixedButton";
 import FeedbackSection from "./components/FeedbackSection";
 import { ShowFeedbackSection } from "./components/ShowFeedbackSection";
+import { Toaster } from "react-hot-toast";
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
       <WhyUsSection />
       <ShowFeedbackSection />
       <FeedbackSection />
+      <Toaster />
       <MapSection />
       <Footer />
     </main>

@@ -3,12 +3,7 @@ import FilledButton from "../Button/FilledButton";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useState } from "react";
 import { useAddFeedback } from "../../hooks/useAddFeedback";
-
-type FeedbackFormProps = {
-  onSuccess: () => void;
-};
 
 const createFeedbackSchema = z.object({
   name: z
@@ -22,17 +17,19 @@ const createFeedbackSchema = z.object({
 
 type CreateFeedbackFormData = z.infer<typeof createFeedbackSchema>;
 
-export const FeedbackForm = (props: FeedbackFormProps) => {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [isRate, setIsRate] = useState<string>("");
-  const [isSelectedRate, setIsSelectedRate] = useState<string | null>(null);
+export const FeedbackForm = () => {
+  // const [isLoading, setIsLoading] = useState<boolean>(false);
+  // const [isRate, setIsRate] = useState<string>("");
+  // const [isSelectedRate, setIsSelectedRate] = useState<string | null>(null);
 
-  const { mutate: addFeedback } = useAddFeedback();
+  const { mutate: addFeedback, isPending } = useAddFeedback();
 
   const {
     register,
+    setValue,
+    getValues,
     handleSubmit,
-    // reset,
+    reset,
     formState: { errors },
   } = useForm<CreateFeedbackFormData>({
     defaultValues: {
@@ -42,33 +39,26 @@ export const FeedbackForm = (props: FeedbackFormProps) => {
     },
     resolver: zodResolver(createFeedbackSchema),
   });
+  const selectedRate = getValues("rate");
 
-  const handleRate = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-    const clickedValue = event.currentTarget.value;
-    setIsRate(event.currentTarget.value);
-    setIsSelectedRate(clickedValue);
-  };
+  // const handleRate = (event: React.MouseEvent<HTMLButtonElement>) => {
+  //   event.preventDefault();
+  //   const clickedValue = event.currentTarget.value;
+  //   setValue("rate", clickedValue);
+  // };
+
   const onSubmit = async (data: CreateFeedbackFormData) => {
-    console.log("Dados do formulário enviados:", data); // Adicione este log
-    if (!isSelectedRate) {
-      alert("Por favor, selecione uma opção antes de enviar.");
-      return;
-    }
-
-    setIsLoading(true);
-    try {
-      await addFeedback({
-        ...data,
-        rate: isSelectedRate,
-      });
-      console.log("Feedback enviado com sucesso.");
-      setIsLoading(false);
-      props.onSuccess();
-    } catch (error) {
-      console.error("Erro ao enviar feedback:", error);
-      setIsLoading(false);
-    }
+    console.log("Dados do formulário enviados:", data);
+    const selectedRate = getValues("rate");
+    console.log(selectedRate);
+    await addFeedback({
+      data: data,
+      onSuccess() {
+        console.log("Sucesso.");
+        reset()
+      },
+    });
+    console.log("Feedback enviado com sucesso.");
   };
 
   return (
@@ -94,7 +84,7 @@ export const FeedbackForm = (props: FeedbackFormProps) => {
           Nome
         </label>
         <input
-          disabled={isLoading}
+          disabled={isPending}
           className="custom-input w-full transform rounded-lg border border-gray-300 bg-gray-100 px-4 py-2 text-sm shadow-sm transition duration-300 ease-in-out hover:border-blue-300 hover:shadow-lg focus:-translate-y-1 focus:outline-blue-300"
           placeholder="Seu nome aqui"
           type="text"
@@ -105,7 +95,8 @@ export const FeedbackForm = (props: FeedbackFormProps) => {
           Feedback
         </label>
         <textarea
-          disabled={isLoading}
+          maxLength={40}
+          disabled={isPending}
           required
           className="custom-input h-56 w-full transform resize-none rounded-lg border border-gray-300 bg-gray-100 px-4 py-2 text-sm shadow-sm transition duration-300 ease-in-out hover:border-blue-300 hover:shadow-lg focus:-translate-y-1 focus:outline-blue-300 md:w-full"
           placeholder="Enter text here"
@@ -125,12 +116,13 @@ export const FeedbackForm = (props: FeedbackFormProps) => {
         <div className="flex items-center justify-center md:my-4">
           {rate.map((item, index) => (
             <button
-              onClick={(event) => handleRate(event)}
+              type="button"
+              onClick={() => {
+                setValue("rate", item.name, { shouldValidate: true });
+              }}
               key={index}
               className={`md:text-1xl my-2 rounded-lg px-4 py-2 text-xs font-bold text-white shadow-md transition-transform duration-300 ease-in-out hover:scale-105 hover:opacity-100 ${
-                isSelectedRate === `${item.name} ${item.emoji}`
-                  ? ""
-                  : "scale-75 opacity-50"
+                selectedRate === `${item.name}` ? "" : "scale-75 opacity-50"
               } ${item.bg}`}
               value={`${item.name} ${item.emoji}`}
             >
@@ -140,7 +132,7 @@ export const FeedbackForm = (props: FeedbackFormProps) => {
         </div>
 
         <FilledButton className="md:w-full" type="submit">
-          {!isLoading ? "Enviar" : "Enviando..."}
+          {!isPending ? "Enviar" : "Enviando..."}
         </FilledButton>
       </form>
     </section>

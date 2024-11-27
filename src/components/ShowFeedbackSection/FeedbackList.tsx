@@ -25,15 +25,16 @@ export const FeedbackList = () => {
     return (
       <div className="text-center text-red-500">Erro ao carregar feedbacks</div>
     );
-
+ if(!feedbacks)
+  return <div>...</div>
   return (
-    <section className="relative mx-auto mb-10 w-full max-w-6xl overflow-hidden">
+    <section className="relative mx-auto mb-10 w-full max-w-6xl overflow-hidden bg-cyan-950">
       <ul
         className="mb-6 flex w-full transition-transform duration-700 ease-in-out"
         style={{ transform: `translateX(-${currentIndex * 33.33}%)` }} // Move 3 itens de cada vez
       >
         {feedbacks.map((item: any, index: number) => (
-          <li
+          <div
             key={index}
             className="flex w-full flex-shrink-0 justify-center px-1 py-1 md:w-1/3"
           >
@@ -46,7 +47,7 @@ export const FeedbackList = () => {
                 date={item.date}
               />
             </div>
-          </li>
+          </div>
         ))}
       </ul>
 
