@@ -16,7 +16,7 @@ export const useFetchFeedback = () => {
         validRate.includes(item.rate),
       );
       console.log(filteredFeedbacks)
-      return filteredFeedbacks;
+      return filteredFeedbacks.reverse();
     },
   });
 };

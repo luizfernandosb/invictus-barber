@@ -1,5 +1,6 @@
 import { FeedbackItem } from "./FeedbackItem";
 import { useFetchFeedback } from "../../hooks/useFetchFeedback";
+import { format } from "date-fns";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -10,8 +11,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { A11y, Navigation, Zoom } from "swiper/modules";
 import { useEffect, useState } from "react";
-
-
+import { Loader } from "./Loader";
 
 export const FeedbackList = () => {
   const { data: feedbacks, isLoading, isError } = useFetchFeedback();
@@ -36,33 +36,35 @@ export const FeedbackList = () => {
   }, []);
 
   if (isLoading)
-    return <div className="text-center text-white">Carregando...</div>;
+    return <Loader />;
   if (isError)
     return (
-      <div className="text-center text-red-500">Erro ao carregar feedbacks</div>
+      <div className="text-center text-red-500 font-bold">Erro ao carregar feedbacks.</div>
     );
   if (!feedbacks) return <div>...</div>;
   return (
-    <Swiper
-      modules={[Zoom, Navigation, A11y]}
-      spaceBetween={10}
-      slidesPerView={isSetPreview}
-      navigation
-      pagination={{ clickable: true }}
-      onSlideChange={() => console.log("slide change")}
-      onSwiper={(swiper) => console.log(swiper)}
-    >
-      {feedbacks.map((item: any) => (
-        <SwiperSlide key={item.id}>
-          <FeedbackItem
-            name={item.name}
-            rate={item.rate}
-            emoji={item.emoji}
-            feedback={item.feedback}
-            date={item.date}
-          />
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    
+      
+      <Swiper
+        modules={[Zoom, Navigation, A11y]}
+        spaceBetween={10}
+        slidesPerView={isSetPreview}
+        navigation
+        pagination={{ clickable: true }}
+        onSlideChange={() => console.log("slide change")}
+        onSwiper={(swiper) => console.log(swiper)}
+      >
+        {feedbacks.map((item: any) => (
+          <SwiperSlide key={item.id}>
+            <FeedbackItem
+              name={item.name}
+              rate={item.rate}
+              emoji={item.emoji}
+              feedback={item.feedback}
+              date={format(item.createdAt, "dd/MM/yyyy' 'HH:mm:ss")}
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
   );
 };
