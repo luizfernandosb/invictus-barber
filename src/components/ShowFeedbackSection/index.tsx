@@ -1,7 +1,10 @@
-import { FeedbackList } from "./FeedbackList"
+import { FeedbackList } from "./FeedbackList";
 
 export const ShowFeedbackSection = () => {
   return (
-    <FeedbackList />
-  )
-}
+    <section className="mb-5">
+   
+        <FeedbackList />
+    </section>
+  );
+};
