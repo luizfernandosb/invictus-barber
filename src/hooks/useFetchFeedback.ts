@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 
 export const useFetchFeedback = () => {
   const apiUrl = import.meta.env.VITE_BASE_URL;
+  const validRate = ["Bom", "Regular", "Ótimo"];
 
   return useQuery({
     queryKey: ["feedbacks"],
@@ -11,7 +12,11 @@ export const useFetchFeedback = () => {
         throw new Error("Failed to fetch feedbacks");
       }
       const data = await response.json();
-      return data;
+      const filteredFeedbacks = await data.filter((item: any) =>
+        validRate.includes(item.rate),
+      );
+      console.log(filteredFeedbacks)
+      return filteredFeedbacks;
     },
   });
 };

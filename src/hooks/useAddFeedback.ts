@@ -24,6 +24,7 @@ export const useAddFeedback = () => {
       console.log("Enviado com sucesso.");
       await queryClient.invalidateQueries({ queryKey: ["feedbacks"] });
       args.onSuccess();
+      toast.success("Feedback enviado com sucesso!")
     },
     onError: async () => {
       toast.error("Erro ao envia formulário");

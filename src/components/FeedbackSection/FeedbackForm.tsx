@@ -41,11 +41,6 @@ export const FeedbackForm = () => {
   });
   const selectedRate = getValues("rate");
 
-  // const handleRate = (event: React.MouseEvent<HTMLButtonElement>) => {
-  //   event.preventDefault();
-  //   const clickedValue = event.currentTarget.value;
-  //   setValue("rate", clickedValue);
-  // };
 
   const onSubmit = async (data: CreateFeedbackFormData) => {
     console.log("Dados do formulário enviados:", data);
@@ -54,7 +49,7 @@ export const FeedbackForm = () => {
     await addFeedback({
       data: data,
       onSuccess() {
-        console.log("Sucesso.");
+        console.log("Sucesso.", data);
         reset()
       },
     });
@@ -95,7 +90,7 @@ export const FeedbackForm = () => {
           Feedback
         </label>
         <textarea
-          maxLength={40}
+          maxLength={150}
           disabled={isPending}
           required
           className="custom-input h-56 w-full transform resize-none rounded-lg border border-gray-300 bg-gray-100 px-4 py-2 text-sm shadow-sm transition duration-300 ease-in-out hover:border-blue-300 hover:shadow-lg focus:-translate-y-1 focus:outline-blue-300 md:w-full"
@@ -131,7 +126,7 @@ export const FeedbackForm = () => {
           ))}
         </div>
 
-        <FilledButton className="md:w-full" type="submit">
+        <FilledButton className="md:w-full" type="submit" disabled={isPending}>
           {!isPending ? "Enviar" : "Enviando..."}
         </FilledButton>
       </form>

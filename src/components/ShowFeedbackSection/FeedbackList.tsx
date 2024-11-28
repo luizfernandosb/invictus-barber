@@ -1,23 +1,39 @@
-import { useState } from "react";
 import { FeedbackItem } from "./FeedbackItem";
 import { useFetchFeedback } from "../../hooks/useFetchFeedback";
 
-export const FeedbackList = () => {
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
+import { Swiper, SwiperSlide } from "swiper/react";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+//@ts-expect-error
+import "swiper/css";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+//@ts-expect-error
+import "swiper/css/navigation";
+import { A11y, Navigation, Zoom } from "swiper/modules";
+import { useEffect, useState } from "react";
 
+
+
+export const FeedbackList = () => {
   const { data: feedbacks, isLoading, isError } = useFetchFeedback();
 
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? feedbacks.length - 3 : prevIndex - 3,
-    );
-  };
+  const [isSetPreview, setIsSetPreview] = useState<number>(1);
 
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex + 3 >= feedbacks.length ? 0 : prevIndex + 3,
-    );
-  };
+  useEffect(() => {
+    const handleSize = () => {
+      if (window.innerWidth > 720) {
+        setIsSetPreview(4);
+      } else {
+        setIsSetPreview(1);
+      }
+    };
+    handleSize();
+
+    window.addEventListener("resize", handleSize);
+
+    return () => {
+      window.removeEventListener("resize", handleSize);
+    };
+  }, []);
 
   if (isLoading)
     return <div className="text-center text-white">Carregando...</div>;
@@ -25,53 +41,28 @@ export const FeedbackList = () => {
     return (
       <div className="text-center text-red-500">Erro ao carregar feedbacks</div>
     );
- if(!feedbacks)
-  return <div>...</div>
+  if (!feedbacks) return <div>...</div>;
   return (
-    <section className="relative mx-auto mb-10 w-full max-w-6xl overflow-hidden bg-cyan-950">
-      <ul
-        className="mb-6 flex w-full transition-transform duration-700 ease-in-out"
-        style={{ transform: `translateX(-${currentIndex * 33.33}%)` }} // Move 3 itens de cada vez
-      >
-        {feedbacks.map((item: any, index: number) => (
-          <div
-            key={index}
-            className="flex w-full flex-shrink-0 justify-center px-1 py-1 md:w-1/3"
-          >
-            <div className="h-full w-full transform rounded-2xl p-8 transition-all duration-300 ease-out hover:scale-105">
-              <FeedbackItem
-                name={item.name}
-                rate={item.rate}
-                emoji={item.emoji}
-                feedback={item.feedback}
-                date={item.date}
-              />
-            </div>
-          </div>
-        ))}
-      </ul>
-
-      <button
-        className="absolute left-4 top-1/2 -translate-y-1/2 transform rounded-full bg-gray-800 p-6 text-white transition-transform hover:scale-110 hover:bg-gray-700"
-        onClick={handlePrev}
-      >
-        &#8592;
-      </button>
-      <button
-        className="absolute right-4 top-1/2 -translate-y-1/2 transform rounded-full bg-gray-800 p-6 text-white transition-transform hover:scale-110 hover:bg-gray-700"
-        onClick={handleNext}
-      >
-        &#8594;
-      </button>
-
-      {/* <div className="absolute mt-6 bottom-6 left-1/2 transform -translate-x-1/2 flex gap-3">
-        {feedbacks.map((_, index) => (
-          <div
-            key={index}
-            className={`h-4 w-4 rounded-full ${currentIndex === index * 3 ? "bg-gray-900" : "bg-gray-500"}`}
-          ></div>
-        ))}
-      </div> */}
-    </section>
+    <Swiper
+      modules={[Zoom, Navigation, A11y]}
+      spaceBetween={10}
+      slidesPerView={isSetPreview}
+      navigation
+      pagination={{ clickable: true }}
+      onSlideChange={() => console.log("slide change")}
+      onSwiper={(swiper) => console.log(swiper)}
+    >
+      {feedbacks.map((item: any) => (
+        <SwiperSlide key={item.id}>
+          <FeedbackItem
+            name={item.name}
+            rate={item.rate}
+            emoji={item.emoji}
+            feedback={item.feedback}
+            date={item.date}
+          />
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 };
