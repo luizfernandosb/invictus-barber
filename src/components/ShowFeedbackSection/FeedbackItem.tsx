@@ -21,7 +21,7 @@ export const FeedbackItem = (props: FeedbackItemProps) => {
       </p>
         <span className="my-2 h-[1px] w-12 bg-white font-bold"></span>
       <p className="mb-2 ">{props.feedback}</p>
-      <p className="text-xs">{props.date}</p>
+      <p className="text-xs text-end mt-2">{props.date}</p>
     </li>
   );
 };
