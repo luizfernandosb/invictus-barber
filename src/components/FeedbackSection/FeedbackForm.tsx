@@ -60,7 +60,7 @@ export const FeedbackForm = () => {
     <section className="flex flex-col px-5 md:items-center lg:h-screen lg:w-full lg:p-5">
       <div className="text-center lg:w-1/2">
         <h2 className="text-2xl font-bold uppercase lg:mb-10">
-          Sua opnião é muito importante!
+          Sua opinião é muito importante!
         </h2>
         <p className="mb-5">
           Queremos saber o que você pensa! Sua avaliação nos ajuda a melhorar
