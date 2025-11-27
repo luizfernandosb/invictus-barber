@@ -23,8 +23,8 @@ export default function InfoSection() {
             <img src={adress} alt="" className="w-10" />
             <h2 className="mt-2 font-bold">ENDEREÇO</h2>
             <span className="mb-2 mt-2 h-1 w-12 bg-slate-300"></span>
-            <p>Av. Pedro Timponi, 38 - Loja 2</p>
-            <p>Nova Benfica</p>
+            <p>Rua Martins Barbosa, 697</p>
+            <p>Benfica</p>
           </motion.div>
           <motion.div
             initial={{ scale: 0 }}
@@ -52,6 +52,15 @@ export default function InfoSection() {
             >
               {" "}
               <p>Thiago - (32) 99808-0497</p>
+            </a>
+            <a
+              className="hover:cursor-pointer hover:underline"
+              href="https://api.whatsapp.com/send?phone=5532998087203"
+              target="_blank"
+              rel="noopener"
+            >
+              {" "}
+              <p>Douglas - (32) 99808-7203</p>
             </a>
           </motion.div>
           <motion.div
